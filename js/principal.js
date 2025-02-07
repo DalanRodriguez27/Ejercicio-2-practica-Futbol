@@ -1,22 +1,23 @@
 import CL_Equipo from "./CL_Equipo.js";
-import CL_IEquipo from "./CL_IEquipo.js";
 import CL_Partido from "./CL_Partido.js";
-import CL_IPartido from "./CL_IPartido.js";
 
-let iEquipo = new CL_IEquipo(),
-equipo = new CL_Equipo(),
-salida = document.getElementById("salida");
+let partido1 = new CL_Partido(1);
+let partido2 = new CL_Partido(1);
+let partido3 = new CL_Partido(0);
+let partido4 = new CL_Partido(1);
+let partido5 = new CL_Partido(0);
+let partido6 = new CL_Partido(1);
 
+let equipo = new CL_Equipo();
 
-let opc = 1;
-while(opc == 1){
-    let iPartido = new CL_IPartido(),
-    r = iPartido.leerResultado(),
-    partido = new CL_Partido(r);
+equipo.procesarPartido(partido1);
+equipo.procesarPartido(partido2);
+equipo.procesarPartido(partido3);
+equipo.procesarPartido(partido4);
+equipo.procesarPartido(partido5);
+equipo.procesarPartido(partido6);
 
-    equipo.procesarPartido(partido);
+let salida = document.getElementById("salida");
 
-    opc = iPartido.solicitarOpcion();
-}
-
-salida.innerHTML = iEquipo.reporteEquipo(equipo.partidosGanados(), equipo.partidosPerdidos());
+salida.innerHTML =`
+<br>El equipo gano el: ${equipo.partidosGanados()} de los partidos jugados`

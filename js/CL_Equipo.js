@@ -8,11 +8,11 @@ export default class CL_Equipo{
     procesarPartido(partido){
         this.cntPartidos++;
 
-        if(partido.resultado == "1"){
+        if(partido.resultado == 1){
             this.cntGanados++;
         }
 
-        if(partido.resultado == "0"){
+        if(partido.resultado == 0){
             this.cntPerdidos++;
     }
 }
@@ -26,13 +26,5 @@ else{
 }
 }
 
-partidosPerdidos(){
-    if(this.cntPartidos > 0){
-        return (this.cntPerdidos / this.cntPartidos *100) + "%";
-}   
-else{
-    return 0;
-}
-}
 
 }
